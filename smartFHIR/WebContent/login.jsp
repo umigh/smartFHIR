@@ -66,9 +66,7 @@
                             <div class="clearfix"></div>
                             <br />
                             <div>
-                                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> smartFHIR!</h1>
-
-                                <p>©2015 All Rights Reserved. smartFHIR! is a Bootstrap 3 template. Privacy and Terms</p>
+                                <h1>smartFHIR!</h1>
                             </div>
                         </div>
                     </form>
@@ -101,9 +99,7 @@
                             <div class="clearfix"></div>
                             <br />
                             <div>
-                                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Gentelella Alela!</h1>
-
-                                <p>©2015 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                                <h1>smartFHIR</h1>
                             </div>
                         </div>
                     </form>
