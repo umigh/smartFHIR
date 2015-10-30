@@ -45,24 +45,30 @@
         <div id="wrapper">
             <div id="login" class="animate form">
                 <section class="login_content">
-                    <form action="login">
-                        <h1>Login Form</h1>
+                    <form action="signup">
+                        <h1>Signup Form</h1>
                         <div>
-                            <input type="text" class="form-control" placeholder="Username" required="" />
+                            <input type="text" class="form-control" placeholder="Username" required="true" />
                         </div>
                         <div>
-                            <input type="password" class="form-control" placeholder="Password" required="" />
+                            <input type="password" class="form-control" placeholder="Password" required="true" />
+                        </div>
+						<div>
+                            <input type="password" class="form-control" placeholder="Confirm Password" required="true" />
+                        </div>
+						<div>
+                            <input type="text" class="form-control" placeholder="Email" required="true" />
+                        </div>
+						<div>
+                            <input type="text" class="form-control" placeholder="Phone number" required="true" />
                         </div>
                         <div>
-                            <a class="btn btn-default submit">Log in</a>
-                            <a class="reset_pass" href="#">Lost your password?</a>
+                            <a class="btn btn-default submit">Create Account</a>
+                            <a class="btn btn-default cancel">Cancel</a>
                         </div>
                         <div class="clearfix"></div>
                         <div class="separator">
 
-                            <p class="change_link">New to site?
-                                <a href="#toregister" class="to_register"> Create Account </a>
-                            </p>
                             <div class="clearfix"></div>
                             <br />
                             <div>
