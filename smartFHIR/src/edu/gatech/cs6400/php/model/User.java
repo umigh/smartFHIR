@@ -13,14 +13,12 @@ import javax.persistence.TemporalType;
 public class User implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public User(String email, String password, String firstName, String lastName,
-			Date birthDate,String role) {
+	public User(String email, String password, String firstName, String lastName,String role) {
 		super();
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.birthDate = birthDate;
 		this.role=role;
 	}
 
@@ -50,7 +48,7 @@ public class User implements java.io.Serializable {
 		return password;
 	}
 
-	private void setPassword(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
@@ -83,7 +81,7 @@ public class User implements java.io.Serializable {
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "birthDate")
+	@Column(name = "birthDate" , nullable = true)
 	public Date getBirthDate() {
 		return birthDate;
 	}
