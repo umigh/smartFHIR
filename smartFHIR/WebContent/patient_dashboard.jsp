@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <%@page import="edu.gatech.cs6400.php.model.User"%>
 <html lang="en">
 <head>
@@ -27,11 +27,11 @@
         <![endif]-->
 </head>
 
-<body class="nav-md" ng-app="app" id="patientRegistrationCtrl" ng-controller="patientRegistrationCtrl" >
-<%
-	User user=(User) session.getAttribute("User");
-	System.out.println(user);
-%>
+<body class="nav-md" ng-app="app" id="patientRegistrationCtrl" ng-controller="patientRegistrationCtrl">
+    <%
+    User user=(User) session.getAttribute("User");
+    System.out.println(user);
+    %>
     <div class="container body">
 
         <div class="main_container">
@@ -64,7 +64,7 @@
                                     <ul class="nav child_menu" style="display: none">
                                         <li>
                                             <a href="patient_dashboard.jsp">Dashboard</a>
-                                        </li>                                        
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -194,578 +194,711 @@
                     <div class="page-title">
                         <div class="title_left">
                             <h3>Patient Registration Form</h3>
-                        </div>                        
                         </div>
                     </div>
-                    <div class="clearfix"></div>
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Patient Information</h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li>
-                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li>
-                                                    <a href="#">Settings 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="close-link"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-
-                                    <!-- Smart Wizard -->
-                                    <!--<p>Section description can be inserted here.</p>-->
-                                    <div id="wizard" class="form_wizard wizard_horizontal">
-                                        <ul class="wizard_steps">
+                </div>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <!-- Patient Information -->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Patient Information</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
                                             <li>
-                                                <a href="#step-1">
-                                                    <span class="step_no">1</span>
-                                                    <span class="step_descr">
-                                                        Basic<br /> <small>Patient basic information</small>
-                                                    </span>
-                                                </a>
+                                                <a href="#">Settings 1</a>
                                             </li>
                                             <li>
-                                                <a href="#step-2">
-                                                    <span class="step_no">2</span>
-                                                    <span class="step_descr">
-                                                        Address<br /> <small>Patient address</small>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#step-3">
-                                                    <span class="step_no">3</span>
-                                                    <span class="step_descr">
-                                                        Emergency Contact<br /> <small>Patient emergency contacts</small>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#step-4">
-                                                    <span class="step_no">4</span>
-                                                    <span class="step_descr">
-                                                        Family History<br /> <small>Patient family history</small>
-                                                    </span>
-                                                </a>
+                                                <a href="#">Settings 2</a>
                                             </li>
                                         </ul>
-                                        <div id="step-1">
-                                            <form class="form-horizontal form-label-left">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                                                        First Name <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="first-name" ng-model="patientDetails.firstName" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        Last Name <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="last-name" ng-model="patientDetails.lastName" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Middle Name / Initial</label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <div id="gender" class="btn-group" data-toggle="buttons">
-                                                            <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                                                <input type="radio" name="gender" ng-model="patientDetails.gender" value="male"> &nbsp; Male &nbsp;
-                                                            </label>
-                                                            <label class="btn btn-primary active" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                                                <input type="radio" name="gender" ng-model="patientDetails.gender" value="female" > Female
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                                                        Date Of Birth <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" ng-model="patientDetails.birthDate" required="required" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                                                        Phone
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input id="phone" class="date-picker form-control col-md-7 col-xs-12" ng-model="patientDetails.phone" required="required" type="text">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div id="step-2">
-                                            <form class="form-horizontal form-label-left">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                                                        Address 1 <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="address1" ng-model="patientDetails.address.line[0]" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        Address 2 <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="address2" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        City <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="city" name="last-name" ng-model="patientDetails.address.city" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        State <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="state" name="last-name" ng-model="patientDetails.address.state" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        ZIP <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="zip" name="last-name" ng-model="patientDetails.address.postalCode" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div id="step-3">
-                                            <h2 class="StepTitle">Emergency Contact 1</h2>
-                                            
-                                            <form class="form-horizontal form-label-left">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                                                        Name <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="name" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        Email <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="email" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        Phone <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="phone" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        Relationship <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="relationship" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <br />
-                                            <h2 class="StepTitle">Emergency Contact 2</h2>
+                                    </li>
+                                    <li>
+                                        <a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
 
-                                            <form class="form-horizontal form-label-left">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                                                        Name <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="name" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
+                                <!-- Smart Wizard -->
+                                <!--<p>Section description can be inserted here.</p>-->
+                                <div id="wizard" class="form_wizard wizard_horizontal">
+                                    <ul class="wizard_steps">
+                                        <li>
+                                            <a href="#step-1">
+                                                <span class="step_no">1</span>
+                                                <span class="step_descr">
+                                                    Basic<br /> <small>Patient basic information</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#step-2">
+                                                <span class="step_no">2</span>
+                                                <span class="step_descr">
+                                                    Address<br /> <small>Patient address</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#step-3">
+                                                <span class="step_no">3</span>
+                                                <span class="step_descr">
+                                                    Emergency Contact<br /> <small>Patient emergency contacts</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#step-4">
+                                                <span class="step_no">4</span>
+                                                <span class="step_descr">
+                                                    Family History<br /> <small>Patient family history</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div id="step-1">
+                                        <form class="form-horizontal form-label-left">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                                    First Name <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="first-name" ng-model="patientDetails.firstName" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        Email <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="email" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        Phone <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="phone" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                                        Relationship <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="relationship" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                        <div id="step-4">
-                                            <h2 class="StepTitle">Family Member History 1</h2>
-                                            <div class="row">
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Date" class="form-control"></div>
-
-                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Name" class="form-control"> </div>
-                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Relationship" class="form-control"> </div>
-
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Gender" class="form-control"></div>
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Born" class="form-control"></div>
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Age" class="form-control"></div>
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Deceased" class="form-control"></div>
-
-                                                <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Note" class="form-control"> </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Condition" class="form-control"> </div>
-
                                             </div>
-
-                                            <br />
-
-                                            <h2 class="StepTitle">Family Member History 2</h2>
-                                            <div class="row">
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Date" class="form-control"></div>
-
-                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Name" class="form-control"> </div>
-                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Relationship" class="form-control"> </div>
-
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Gender" class="form-control"></div>
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Born" class="form-control"></div>
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Age" class="form-control"></div>
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Deceased" class="form-control"></div>
-
-                                                <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Note" class="form-control"> </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Condition" class="form-control"> </div>
-
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    Last Name <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="last-name" ng-model="patientDetails.lastName" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
                                             </div>
-
-                                            <br />
-
-                                            <h2 class="StepTitle">Family Member History 3</h2>
-                                            <div class="row">
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Date" class="form-control"></div>
-
-                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Name" class="form-control"> </div>
-                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Relationship" class="form-control"> </div>
-
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Gender" class="form-control"></div>
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Born" class="form-control"></div>
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Age" class="form-control"></div>
-                                                <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Deceased" class="form-control"></div>
-
-                                                <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Note" class="form-control"> </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Condition" class="form-control"> </div>
-
+                                            <div class="form-group">
+                                                <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Middle Name / Initial</label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                                                </div>
                                             </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <div id="gender" class="btn-group" data-toggle="buttons">
+                                                        <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                                            <input type="radio" name="gender" ng-model="patientDetails.gender" value="male"> &nbsp; Male &nbsp;
+                                                        </label>
+                                                        <label class="btn btn-primary active" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                                            <input type="radio" name="gender" ng-model="patientDetails.gender" value="female"> Female
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                                    Date Of Birth <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" ng-model="patientDetails.birthDate" required="required" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                                    Phone
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input id="phone" class="date-picker form-control col-md-7 col-xs-12" ng-model="patientDetails.phone" required="required" type="text">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="step-2">
+                                        <form class="form-horizontal form-label-left">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                                    Address 1 <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="address1" ng-model="patientDetails.address.line[0]" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    Address 2 <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="address2" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    City <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="city" name="last-name" ng-model="patientDetails.address.city" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    State <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="state" name="last-name" ng-model="patientDetails.address.state" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    ZIP <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="zip" name="last-name" ng-model="patientDetails.address.postalCode" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="step-3">
+                                        <h2 class="StepTitle">Emergency Contact 1</h2>
+
+                                        <form class="form-horizontal form-label-left">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                                    Name <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="name" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    Email <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="email" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    Phone <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="phone" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    Relationship <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="relationship" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <br />
+                                        <h2 class="StepTitle">Emergency Contact 2</h2>
+
+                                        <form class="form-horizontal form-label-left">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                                    Name <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="name" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    Email <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="email" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    Phone <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="phone" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                    Relationship <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input type="text" id="relationship" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                    <div id="step-4">
+                                        <h2 class="StepTitle">Family Member History 1</h2>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Date" class="form-control"></div>
+
+                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Name" class="form-control"> </div>
+                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Relationship" class="form-control"> </div>
+
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Gender" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Born" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Age" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Deceased" class="form-control"></div>
+
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Note" class="form-control"> </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Condition" class="form-control"> </div>
+
+                                        </div>
+
+                                        <br />
+
+                                        <h2 class="StepTitle">Family Member History 2</h2>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Date" class="form-control"></div>
+
+                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Name" class="form-control"> </div>
+                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Relationship" class="form-control"> </div>
+
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Gender" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Born" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Age" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Deceased" class="form-control"></div>
+
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Note" class="form-control"> </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Condition" class="form-control"> </div>
+
+                                        </div>
+
+                                        <br />
+
+                                        <h2 class="StepTitle">Family Member History 3</h2>
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Date" class="form-control"></div>
+
+                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Name" class="form-control"> </div>
+                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Relationship" class="form-control"> </div>
+
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Gender" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Born" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Age" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Deceased" class="form-control"></div>
+
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Note" class="form-control"> </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Condition" class="form-control"> </div>
+
                                         </div>
                                     </div>
-                                    <!-- End SmartWizard Content -->
                                 </div>
+                                <!-- End SmartWizard Content -->
                             </div>
                         </div>
-
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Add a new immunization </h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li>
-                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li>
-                                                    <a href="#">Settings 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="close-link"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <form class="form-horizontal form-label-left">
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Administration Date <span class="required">*</span> </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12"> <input type="text" id="first-name" ng-model="details.adminDate" required="required" class="form-control col-md-7 col-xs-12"> </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"> Vaccine <span class="required">*</span> </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="last-name" name="last-name" ng-model="details.vaccine" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Site</label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" ng-model="details.site" name="middle-name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                                                Route <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" ng-model="details.route" required="required" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                                                Dose
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="phone" class="date-picker form-control col-md-7 col-xs-12" ng-model="details.dose" required="required" type="text">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                                <button type="submit" class="btn btn-primary" ng-click="details=null;">Cancel</button>
-                                                <button type="submit" class="btn btn-success" ng-click="updateModel(details)" ng-disabled="details.route==null||details.vaccine==null||details.adminDate==null">Submit</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Immunization</h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li>
-                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li>
-                                                    <a href="#">Settings 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="close-link"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Administration Date</th>
-                                                <th>Vaccine</th>
-                                                <th>Site</th>
-                                                <th>Route</th>
-                                                <th>Dose</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr ng-repeat="row in collection" >
-                                               <td>{{row.resource.date}}</td>
-                                                <td>{{row.resource.vaccineCode.text}}</td>
-                                                <td>{{row.resource.site}}</td>
-                                                <td>{{row.resource.route}}</td>
-                                                <td>{{row.resource.doseQuantity}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Add a new Medication </h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li>
-                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li>
-                                                    <a href="#">Settings 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="close-link"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <form class="form-horizontal form-label-left">
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Administration Date <span class="required">*</span> </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12"> <input type="text" id="first-name" ng-model="details.adminDate" required="required" class="form-control col-md-7 col-xs-12"> </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"> Vaccine <span class="required">*</span> </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="last-name" name="last-name" ng-model="details.vaccine" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Site</label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" ng-model="details.site" name="middle-name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                                                Route <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" ng-model="details.route" required="required" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                                                Dose
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="phone" class="date-picker form-control col-md-7 col-xs-12" ng-model="details.dose" required="required" type="text">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                                <button type="submit" class="btn btn-primary" ng-click="details=null;">Cancel</button>
-                                                <button type="submit" class="btn btn-success" ng-click="updateModel(details)" ng-disabled="details.route==null||details.vaccine==null||details.adminDate==null">Submit</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Medication</h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li>
-                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li>
-                                                    <a href="#">Settings 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="close-link"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Administration Date</th>
-                                                <th>Vaccine</th>
-                                                <th>Site</th>
-                                                <th>Route</th>
-                                                <th>Dose</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr ng-repeat="row in collection" >
-                                               <td>{{row.resource.date}}</td>
-                                                <td>{{row.resource.vaccineCode.text}}</td>
-                                                <td>{{row.resource.date}}</td>
-                                                <td>{{row.resource.date}}</td>
-                                                <td>{{row.resource.date}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                        <div class="clearfix"></div>
-
                     </div>
-                <div class="clearfix"></div>
+                    <!-- /Patient Information -->
+                    <!-- Add an immunization -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Add a new immunization </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="#">Settings 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <form class="form-horizontal form-label-left">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Administration Date <span class="required">*</span> </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12"> <input type="text" id="first-name" ng-model="details.adminDate" required="required" class="form-control col-md-7 col-xs-12"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"> Vaccine <span class="required">*</span> </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="last-name" name="last-name" ng-model="details.vaccine" required="required" class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Site</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" ng-model="details.site" name="middle-name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                            Route <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" ng-model="details.route" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                            Dose
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="phone" class="date-picker form-control col-md-7 col-xs-12" ng-model="details.dose" required="required" type="text">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                            <button type="submit" class="btn btn-primary" ng-click="details=null;">Cancel</button>
+                                            <button type="submit" class="btn btn-success" ng-click="updateModel(details)" ng-disabled="details.route==null||details.vaccine==null||details.adminDate==null">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Add an immunization -->
+                    <!-- Immunizations -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Immunization</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="#">Settings 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Administration Date</th>
+                                            <th>Vaccine</th>
+                                            <th>Site</th>
+                                            <th>Route</th>
+                                            <th>Dose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="row in collection">
+                                            <td>{{row.resource.date}}</td>
+                                            <td>{{row.resource.vaccineCode.text}}</td>
+                                            <td>{{row.resource.site}}</td>
+                                            <td>{{row.resource.route}}</td>
+                                            <td>{{row.resource.doseQuantity}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Immunizations -->
+                    <!-- To start a new row of widgets -->
+                    <div class="clearfix"></div>
+
+                    <!-- Add a medication -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Add a new Medication </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="#">Settings 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <form class="form-horizontal form-label-left">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Administration Date <span class="required">*</span> </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12"> <input type="text" id="first-name" ng-model="details.adminDate" required="required" class="form-control col-md-7 col-xs-12"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"> Vaccine <span class="required">*</span> </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="last-name" name="last-name" ng-model="details.vaccine" required="required" class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Site</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" ng-model="details.site" name="middle-name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                            Route <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" ng-model="details.route" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                            Dose
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="phone" class="date-picker form-control col-md-7 col-xs-12" ng-model="details.dose" required="required" type="text">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                            <button type="submit" class="btn btn-primary" ng-click="details=null;">Cancel</button>
+                                            <button type="submit" class="btn btn-success" ng-click="updateModel(details)" ng-disabled="details.route==null||details.vaccine==null||details.adminDate==null">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Add a medication -->
+                    <!-- Medications -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Medication</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="#">Settings 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Administration Date</th>
+                                            <th>Vaccine</th>
+                                            <th>Site</th>
+                                            <th>Route</th>
+                                            <th>Dose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="row in collection">
+                                            <td>{{row.resource.date}}</td>
+                                            <td>{{row.resource.vaccineCode.text}}</td>
+                                            <td>{{row.resource.date}}</td>
+                                            <td>{{row.resource.date}}</td>
+                                            <td>{{row.resource.date}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Medications -->
+                    <!-- To start a new row of widgets -->
+                    <div class="clearfix"></div>
+
+                    <!-- Add an allergy -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Add an allergy</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="#">Settings 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <form class="form-horizontal form-label-left">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Recorded Date <span class="required">*</span> </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="recorded-date" name="recorded-date" required="required" class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="status" class="form-control col-md-7 col-xs-12" type="text" name="status">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                            Substance <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="substance" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" name="substance">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                            <button type="submit" class="btn btn-primary">Cancel</button>
+                                            <button type="submit" class="btn btn-success">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Add an allergy -->
+                    <!-- Allergies -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Allergies</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="#">Settings 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Recorded Date</th>
+                                            <th>Status</th>
+                                            <th>Substance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>2015-03-26</td>
+                                            <td>Confirmed</td>
+                                            <td>Dust</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>2015-03-26</td>
+                                            <td>Confirmed</td>
+                                            <td>Peanuts</td>
+                                        </tr>
+                                        <!--<tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                        </tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Allergies -->
 
 
 
                 </div>
+                <div class="clearfix"></div>
 
-                <!-- footer content -->
-                <footer>
-                    <div class="">
-                        <p class="pull-right">
-                            Patient Health Portal |
-                            <span class="lead"> Georgia Institute of Technology</span>
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </footer>
-                <!-- /footer content -->
+
 
             </div>
-            <!-- /page content -->
+
+            <!-- footer content -->
+            <footer>
+                <div class="">
+                    <p class="pull-right">
+                        Patient Health Portal |
+                        <span class="lead"> Georgia Institute of Technology</span>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+
         </div>
+        <!-- /page content -->
+    </div>
     </div>
     <div id="custom_notifications" class="custom-notifications dsp_none">
         <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group"></ul>
@@ -787,38 +920,38 @@
     <script src="app/app.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-        	var patientId=<%=user.getFhirId()%>;
-        	angular.element($('#patientRegistrationCtrl')).scope().setPatientId(patientId);
-        	//alert(patientId);
+            var patientId=<%=user.getFhirId()%>;
+            angular.element($('#patientRegistrationCtrl')).scope().setPatientId(patientId);
+            //alert(patientId);
             // Smart Wizard
             $('#wizard').smartWizard(
               {
-                onFinish:onFinishCallback
+                  onFinish:onFinishCallback
               }
             );
 
 
             function onFinishCallback($http,$scope) {
                 angular.element($('#patientRegistrationCtrl')).scope().myfunction();
-               //$http.put('http://fhirtest.uhn.ca/baseDstu2/Patient/1371268?_format=json','patientDetails');
+                //$http.put('http://fhirtest.uhn.ca/baseDstu2/Patient/1371268?_format=json','patientDetails');
                 //$('#wizard').smartWizard({contentURL:'http://fhirtest.uhn.ca/baseDstu2/Patient/1371268?_format=json',contentCache:false});
                 //var data ='data';
-//                $.put("http://fhirtest.uhn.ca/baseDstu2/Patient/1371268", function(data, status){
-//                    alert("Data: " + data + "\nStatus: " + status);
-//                });
-//                $.ajax({
-//                    type: "PUT",
-//                    url: "http://fhirtest.uhn.ca/baseDstu2/Patient/1371268",
-//                    contentType: "application/json",
-//                    data: {"data": $scope.patientDetails}
-//                });
+                //                $.put("http://fhirtest.uhn.ca/baseDstu2/Patient/1371268", function(data, status){
+                //                    alert("Data: " + data + "\nStatus: " + status);
+                //                });
+                //                $.ajax({
+                //                    type: "PUT",
+                //                    url: "http://fhirtest.uhn.ca/baseDstu2/Patient/1371268",
+                //                    contentType: "application/json",
+                //                    data: {"data": $scope.patientDetails}
+                //                });
 
 
 
-//                $.get("http://fhirtest.uhn.ca/baseDstu2/Patient/1371268", function(data, status){
-//                    alert("Data: " + data + "\nStatus: " + status);
-//                    angular.element(document.getElementById('patientRegistrationCtrl')).scope().get();
-//                });
+                //                $.get("http://fhirtest.uhn.ca/baseDstu2/Patient/1371268", function(data, status){
+                //                    alert("Data: " + data + "\nStatus: " + status);
+                //                    angular.element(document.getElementById('patientRegistrationCtrl')).scope().get();
+                //                });
                 $('#wizard').smartWizard('showMessage', 'Finish Clicked');
             }
         });
