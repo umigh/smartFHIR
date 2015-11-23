@@ -920,7 +920,8 @@
     <script src="app/app.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var patientId=<%=user.getFhirId()%>;
+            //var patientId=<%=user.getFhirId()%>;
+			var patientId=23489;
             angular.element($('#patientRegistrationCtrl')).scope().setPatientId(patientId);
             //alert(patientId);
             // Smart Wizard

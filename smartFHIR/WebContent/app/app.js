@@ -3,6 +3,8 @@ var app=angular.module('app',[]);
 app.controller('patientRegistrationCtrl',function($scope,$http){
     function init() {
         $scope.collection=[];
+        $scope.emergencyContact = [];
+        $scope.familyMemberHistory = [];
         $scope.immunization={
             adminDate:null,
             vaccine:null,
@@ -17,12 +19,14 @@ app.controller('patientRegistrationCtrl',function($scope,$http){
                 dose:null,
                 site:null
             };
-        $scope.details=null;
+        $scope.details = null;
         $scope.setPatientId=function(patientId)
         {
-        	$scope.patientId=patientId;
+            $scope.patientId = patientId;
         	getPatientInformation();
-            getImmunizationDetails();
+        	getImmunizationDetails();
+        	getEmergencyContactsDetails();
+        	getFamilyMemberHistory();
         }
     }
     init();
@@ -81,6 +85,26 @@ app.controller('patientRegistrationCtrl',function($scope,$http){
             console.log("Failure - ", error);
         })
     }
+    function getPatientInformation(patientId) {
+        $http.get('http://fhirtest.uhn.ca/baseDstu2/Patient/' + patientId).success(function (result) {
+            console.log(result);
+            try {
+                return {
+                    lastName: result.name[0].family[0],
+                    firstName: result.name[0].given[0],
+                    gender: result.gender,
+                    birthDate: result.birthDate,
+                    address: result.address[0]
+                };
+            }
+            catch (err) {
+                console.log(err.message);
+            }
+
+        }).error(function (error) {
+            console.log("Failure - ", error);
+        })
+    }
     function getImmunizationDetails()
     {
     	$http.get('http://fhirtest.uhn.ca/baseDstu2/Immunization?patient='+$scope.patientId).success(function (result) {
@@ -101,7 +125,87 @@ app.controller('patientRegistrationCtrl',function($scope,$http){
             console.log("Failure - ", error);
         })
     }
+    function getEmergencyContactsDetails()
+    {
+        $http.get('http://fhirtest.uhn.ca/baseDstu2/RelatedPerson?patient=' + $scope.patientId).success(function (result) {
+            console.log('getEmergencyContactsDetails()');
+            console.log(result);
+            try {
+                for (var i = 0; i < result.total; i++)
+                {
+                    $scope.emergencyContact[i] = {
+                        firstName: result.entry[i].resource.name.given[0],
+                        lastName: result.entry[i].resource.name.family[0],
+                        birthDate: result.entry[i].resource.birthDate,
+                        relationship: result.entry[i].resource.relationship.coding[0].code
+                    };
+                }
 
+                //console.log(result.total);
+                //console.log(result.entry[0].fullUrl);
+                //console.log(result.entry[0].resource.relationship.coding[0].code);
+                //console.log(result.entry[0].resource.name.family[0]);
+                //console.log(result.entry[0].resource.name.given[0]);
+
+                //console.log($scope.emergencyContact[0].firstName);
+                //console.log($scope.emergencyContact[0].lastName);
+                //console.log($scope.emergencyContact[0].birthDate);
+                //console.log($scope.emergencyContact[0].relationship);
+            }
+            catch (err) {
+                console.log(err.message);
+            }
+
+        }).error(function (error) {
+            console.log("Failure - ", error);
+        })
+    }
+    function getFamilyMemberHistory()
+    {
+        //http://fhirtest.uhn.ca/baseDstu2/FamilyMemberHistory?patient=341387
+        $http.get('http://fhirtest.uhn.ca/baseDstu2/FamilyMemberHistory?patient=' + $scope.patientId).success(function (result) {
+            console.log('getFamilyMemberHistory()');
+            //console.log(result);
+            try {
+                //for (var i = 0; i < result.total; i++)
+                //{
+                //    $scope.familyMemberHistory[i] = {
+                //        date: result.entry[i].resource.meta.lastUpdated,
+                //        name: result.entry[i].resource.patient,
+                //        relationship: result.entry[i].resource.relationship.coding[0].display,
+                //        gender: result.entry[i].resource.patient,
+                //        born: result.entry[i].resource.patient,
+                //        age: result.entry[i].resource.patient,
+                //        deceased: result.entry[i].resource.patient,
+                //        note: result.entry[i].resource.text.div,
+                //        condition: result.entry[i].resource.condition[0].code.coding[0].display
+                //    };
+                //}
+
+                console.log(result.entry[0].resource.meta.lastUpdated);
+                console.log(result.entry[0].resource.condition[0].code.coding[0].display);
+                console.log(result.entry[0].resource.relationship.coding[0].display);
+                console.log(result.entry[0].resource.text.div);
+                console.log(result.entry[0].resource.patient.reference); // this need to be split on / and passed to getPatientInfo to get the family memeber details
+
+                //console.log($scope.familyMemberHistory[0].date);
+                //console.log($scope.familyMemberHistory[0].name);
+                //console.log($scope.familyMemberHistory[0].relationship);
+                //console.log($scope.familyMemberHistory[0].gender);
+                //console.log($scope.familyMemberHistory[0].born);
+                //console.log($scope.familyMemberHistory[0].age);
+                //console.log($scope.familyMemberHistory[0].deceased);
+                //console.log($scope.familyMemberHistory[0].note);
+                //console.log($scope.familyMemberHistory[0].condition);
+            }
+            catch (err) {
+                console.log(err.message);
+            }
+
+        }).error(function (error) {
+            console.log("Failure - ", error);
+        })
+    }
 });
 //app.factory('PatientRegistrationFactory',function($http){
 //    return {
