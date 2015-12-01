@@ -447,7 +447,20 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"> Vaccine <span class="required">*</span> </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="vaccine" name="vaccine" ng-model="details.vaccine" required="required" class="form-control col-md-7 col-xs-12">
+                                                <select name="vaccine" id="vaccine" ng-model="details.vaccine" required="required" class="pull-center" style="background: #fff; cursor: pointer; padding: 10px 20px; border: 1px solid #ccc">
+												  <option value="MMR-II">MMR-II</option>
+												  <option value="FLUVAX">FLUVAX</option>
+												  <option value="DTPA">DTPA</option>
+												  <option value="CDT">CDT</option>
+												  <option value="PNEUMOVAX 23">PNEUMOVAX 23</option>
+												  <option value="POLIO SABIN(ORAL)">POLIO SABIN(ORAL)</option>
+												  <option value="TRIPLE ANTIGEN">TRIPLE ANTIGEN</option>
+												  <option value="FLUARIX">FLUARIX</option>
+												  <option value="INFLUENZA">INFLUENZA</option>
+												  <option value="H-B-VAX II(PAEDIATRIC)">H-B-VAX II(PAEDIATRIC)</option>
+												  <option value="INFLUENZA">INFLUENZA</option>
+												  <option value="INFANRIX">INFANRIX</option>
+												</select>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -529,8 +542,20 @@
                                                 Medication
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="medication" name="medication" class="date-picker form-control col-md-7 col-xs-12" ng-model="details.medication" required="required" type="text">
+                                                <select name="medication" id="medication" ng-model="details.medication" required="required" class="pull-center" style="background: #fff; cursor: pointer; padding: 10px 20px; border: 1px solid #ccc">
+												  <option value="MAREVAN">MAREVAN</option>
+												  <option value="Nicabate">Nicabate</option>
+												  <option value="AMOXIL">AMOXIL</option>
+												  <option value="WARFARIN SODIUM">WARFARIN SODIUM</option>
+												  <option value="ZYRTEC">ZYRTEC</option>
+												  <option value="Ventolin">Ventolin</option>
+												  <option value="Caltrate">Caltrate</option>
+												  <option value="Oxycontin">Oxycontin</option>
+												  <option value="Natrilix">Natrilix</option>
+												  <option value="Dulcolax">Dulcolax</option>
+												</select>
                                             </div>
+                                            
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">
