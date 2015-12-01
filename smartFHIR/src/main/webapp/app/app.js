@@ -33,7 +33,7 @@ app.controller('patientRegistrationCtrl',function($scope,$http){
         	getImmunizationDetails(); 
         	getMedicationDetails();
         	getEmergencyContactsDetails();
-        	//getFamilyMemberHistory();
+        	getFamilyMemberHistory();
         }
     }
     init();
@@ -133,19 +133,66 @@ app.controller('patientRegistrationCtrl',function($scope,$http){
     }
     function getEmergencyContactsDetails()
     {
-    	alert('emergency contact');
+    	//alert('emergency contact');
         $http.get('http://fhirtest.uhn.ca/baseDstu2/RelatedPerson?patient=' + $scope.patientId).success(function (result) {
             console.log('getEmergencyContactsDetails()');
             console.log(result);
             try {
-                for (var i = 0; i < result.total; i++)
+                for (var i = 0; i < result.entry.length; i++)
                 {
-                    $scope.emergencyContact[i] = {
-                        firstName: result.entry[i].resource.name.given[0],
-                        lastName: result.entry[i].resource.name.family[0],
-                        birthDate: result.entry[i].resource.birthDate,
-                        relationship: result.entry[i].resource.relationship.coding[0].code
-                    };
+                	if(i==0) {
+                		if(result.entry[i].resource.name.family!=null) {
+                			$("#name1").val(result.entry[i].resource.name.family[0]);
+                	    }
+                		if(result.entry[i].resource.telecom[0]!=null && result.entry[i].resource.telecom[0].system=="phone") {
+                			$("#phone1").val(result.entry[i].resource.telecom[0].value);
+                		}
+                		
+                		if(result.entry[i].resource.telecom[0]!=null && result.entry[i].resource.telecom[0].system=="email") {
+                			$("#email1").val(result.entry[i].resource.telecom[0].value);
+                		}
+                		
+                		if(result.entry[i].resource.telecom[1]!=null && result.entry[i].resource.telecom[1].system=="phone") {
+                			$("#phone1").val(result.entry[i].resource.telecom[1].value);
+                		}
+                		
+                		if(result.entry[i].resource.telecom[1]!=null && result.entry[i].resource.telecom[1].system=="email") {
+                			$("#email1").val(result.entry[i].resource.telecom[1].value);
+                		}
+                		
+                		if(result.entry[i].resource.relationship!=null) {
+                			$("#relationship1").val(result.entry[i].resource.relationship.text);
+                		}
+                		
+                		$("#fhirContact1Id").val(result.entry[i].resource.id);
+                		console.log($("#fhirContact1Id").val());
+                	}
+                	
+                	if(i==1) {
+                		if(result.entry[i].resource.name.family!=null) {
+                			$("#name2").val(result.entry[i].resource.name.family[0]);
+                		}
+                		if(result.entry[i].resource.telecom[0]!=null && result.entry[i].resource.telecom[0].system=="phone") {
+                			$("#phone2").val(result.entry[i].resource.telecom[0].value);
+                		}
+                		
+                		if(result.entry[i].resource.telecom[0]!=null && result.entry[i].resource.telecom[0].system=="email") {
+                			$("#email2").val(result.entry[i].resource.telecom[0].value);
+                		}
+                		
+                		if(result.entry[i].resource.telecom[1]!=null && result.entry[i].resource.telecom[1].system=="phone") {
+                			$("#phone2").val(result.entry[i].resource.telecom[1].value);
+                		}
+                		
+                		if(result.entry[i].resource.telecom[1]!=null && result.entry[i].resource.telecom[1].system=="email") {
+                			$("#email2").val(result.entry[i].resource.telecom[1].value);
+                		}
+                		if(result.entry[i].resource.relationship!=null) {                			
+                			$("#relationship2").val(result.entry[i].resource.relationship.text);
+                		}
+                		$("#fhirContact2Id").val(result.entry[i].resource.id);
+                		console.log($("#fhirContact2Id").val());
+                	}
                 }
             }
             catch (err) {
@@ -156,42 +203,39 @@ app.controller('patientRegistrationCtrl',function($scope,$http){
             console.log("Failure - ", error);
         })
     }
+        
     function getFamilyMemberHistory()
     {
         $http.get('http://fhirtest.uhn.ca/baseDstu2/FamilyMemberHistory?patient=' + $scope.patientId).success(function (result) {
             console.log('getFamilyMemberHistory()');
-            //console.log(result);
+            console.log(result);
             try {
-                //for (var i = 0; i < result.total; i++)
-                //{
-                //    $scope.familyMemberHistory[i] = {
-                //        date: result.entry[i].resource.meta.lastUpdated,
-                //        name: result.entry[i].resource.patient,
-                //        relationship: result.entry[i].resource.relationship.coding[0].display,
-                //        gender: result.entry[i].resource.patient,
-                //        born: result.entry[i].resource.patient,
-                //        age: result.entry[i].resource.patient,
-                //        deceased: result.entry[i].resource.patient,
-                //        note: result.entry[i].resource.text.div,
-                //        condition: result.entry[i].resource.condition[0].code.coding[0].display
-                //    };
-                //}
-
-                console.log(result.entry[0].resource.meta.lastUpdated);
-                console.log(result.entry[0].resource.condition[0].code.coding[0].display);
-                console.log(result.entry[0].resource.relationship.coding[0].display);
-                console.log(result.entry[0].resource.text.div);
-                console.log(result.entry[0].resource.patient.reference); // this need to be split on / and passed to getPatientInfo to get the family memeber details
-
-                //console.log($scope.familyMemberHistory[0].date);
-                //console.log($scope.familyMemberHistory[0].name);
-                //console.log($scope.familyMemberHistory[0].relationship);
-                //console.log($scope.familyMemberHistory[0].gender);
-                //console.log($scope.familyMemberHistory[0].born);
-                //console.log($scope.familyMemberHistory[0].age);
-                //console.log($scope.familyMemberHistory[0].deceased);
-                //console.log($scope.familyMemberHistory[0].note);
-                //console.log($scope.familyMemberHistory[0].condition);
+                for (var i = 0; i < result.entry.length; i++)
+                {
+                	if(i==0) {
+                		$("#fhdate1").val(result.entry[i].resource.date);
+                		$("#fhname1").val(result.entry[i].resource.name);
+                		$("#fhgender1").val(result.entry[i].resource.gender);
+                		$("#fhrelationship1").val(result.entry[i].resource.relationship.coding[0].display);
+                		$("#fhborn1").val(result.entry[i].resource.born);
+                		$("#fhcondition1").val(result.entry[i].resource.condition[0].code.text);
+                		$("#fhnote1").val(result.entry[i].resource.condition[0].code.text);
+                		$("#fhirFH1Id").val(result.entry[i].resource.id);
+                		console.log($("#fhirFH1Id").val());
+                	}
+                	
+                	if(i==1) {
+                		$("#fhdate2").val(result.entry[i].resource.date);
+                		$("#fhname2").val(result.entry[i].resource.name);
+                		$("#fhgender2").val(result.entry[i].resource.gender);
+                		$("#fhrelationship2").val(result.entry[i].resource.relationship.coding[0].display);
+                		$("#fhborn2").val(result.entry[i].resource.born);
+                		$("#fhcondition2").val(result.entry[i].resource.condition[0].code.text);
+                		$("#fhnote2").val(result.entry[i].resource.condition[0].code.text);
+                		$("#fhirFH2Id").val(result.entry[i].resource.id);
+                		console.log($("#fhirFH2Id").val());
+                	}
+                }
             }
             catch (err) {
                 console.log(err.message);

@@ -312,12 +312,13 @@
                                         <h2 class="StepTitle">Emergency Contact 1</h2>
 
                                         <form class="form-horizontal form-label-left">
+                                        	<input type="hidden" id="fhirContact1Id" />
                                             <div class="form-group">
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
                                                     Name <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="name" required="required" class="form-control col-md-7 col-xs-12">
+                                                    <input type="text" id="name1" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -325,7 +326,7 @@
                                                     Email <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="email" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                    <input type="text" id="email1" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -333,7 +334,7 @@
                                                     Phone <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="phone" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                    <input type="text" id="phone1" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -341,7 +342,7 @@
                                                     Relationship <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="relationship" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                    <input type="text" id="relationship1" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
                                         </form>
@@ -349,12 +350,13 @@
                                         <h2 class="StepTitle">Emergency Contact 2</h2>
 
                                         <form class="form-horizontal form-label-left">
+                                        	<input type="hidden" id="fhirContact2Id" />
                                             <div class="form-group">
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
                                                     Name <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="name" required="required" class="form-control col-md-7 col-xs-12">
+                                                    <input type="text" id="name2" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -362,7 +364,7 @@
                                                     Email <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="email" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                    <input type="text" id="email2" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -370,7 +372,7 @@
                                                     Phone <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="phone" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                    <input type="text" id="phone2" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -378,7 +380,7 @@
                                                     Relationship <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="relationship" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                                    <input type="text" id="relationship2" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
                                         </form>
@@ -387,57 +389,32 @@
                                     <div id="step-4">
                                         <h2 class="StepTitle">Family Member History 1</h2>
                                         <div class="row">
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Date" class="form-control"></div>
-
-                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Name" class="form-control"> </div>
-                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Relationship" class="form-control"> </div>
-
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Gender" class="form-control"></div>
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Born" class="form-control"></div>
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Age" class="form-control"></div>
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Deceased" class="form-control"></div>
-
-                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Note" class="form-control"> </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Condition" class="form-control"> </div>
-
+                                        	<input type="hidden" id="fhirFH1Id" />
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhdate1" placeholder="Date" class="form-control"></div>
+                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhname1" placeholder="Name" class="form-control"> </div>
+                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhrelationship1" placeholder="Relationship" class="form-control"> </div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhgender1" placeholder="Gender" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhborn1" placeholder="Born" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhage1" placeholder="Age" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhdeceased1" placeholder="Deceased" class="form-control"></div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhnote1" placeholder="Note" class="form-control"> </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhcondition1" placeholder="Condition" class="form-control"> </div>
                                         </div>
 
                                         <br />
 
                                         <h2 class="StepTitle">Family Member History 2</h2>
                                         <div class="row">
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Date" class="form-control"></div>
-
-                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Name" class="form-control"> </div>
-                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Relationship" class="form-control"> </div>
-
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Gender" class="form-control"></div>
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Born" class="form-control"></div>
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Age" class="form-control"></div>
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Deceased" class="form-control"></div>
-
-                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Note" class="form-control"> </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Condition" class="form-control"> </div>
-
-                                        </div>
-
-                                        <br />
-
-                                        <h2 class="StepTitle">Family Member History 3</h2>
-                                        <div class="row">
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Date" class="form-control"></div>
-
-                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Name" class="form-control"> </div>
-                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Relationship" class="form-control"> </div>
-
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Gender" class="form-control"></div>
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Born" class="form-control"></div>
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Age" class="form-control"></div>
-                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Deceased" class="form-control"></div>
-
-                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Note" class="form-control"> </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" placeholder="Condition" class="form-control"> </div>
-
+                                        	<input type="hidden" id="fhirFH2Id" />
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhdate2" placeholder="Date" class="form-control"></div>
+                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhname2" placeholder="Name" class="form-control"> </div>
+                                            <div class="col-md-2 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhrelationship2" placeholder="Relationship" class="form-control"> </div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhgender2" placeholder="Gender" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhborn2" placeholder="Born" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhage2" placeholder="Age" class="form-control"></div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhdeceased2" placeholder="Deceased" class="form-control"></div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhnote2" placeholder="Note" class="form-control"> </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group"> <input type="text" id="fhcondition2" placeholder="Condition" class="form-control"> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -662,7 +639,7 @@
     <script type="text/javascript">
     var patientId=<%=user!=null?user.getFhirId():"9999999"%>;
         $(document).ready(function () {
-        	alert(patientId);
+        	//alert(patientId);
         	angular.element($('#patientRegistrationCtrl')).scope().setPatientId(patientId);
             $('#wizard').smartWizard(
               {
@@ -673,46 +650,308 @@
             
 
             function onFinishCallback($http,$scope) {
-            	var formdata="{\"resourceType\":\"Patient\", \"name\":[{ \"family\":[\" "+$('#last-name').val()+" \"],\"given\":[\""+$('#first-name').val()+"\"]}],\"gender\":\""+$('#gender').val()+"\",\"birthDate\":\""+$('#birthday').val()+"\",\"address\":[{\"use\":\"home\",\"line\":[\""+$('#address').val()+"\"],\"city\":\""+$('#city').val()+"\",\"state\":\""+$('#state').val()+"\",\"postalCode\":\""+$('#zip').val()+"\"}],\"active\":true}";
-            	console.log(formdata);
-                $.ajax({
-                        type: 'POST',
-                        contentType: "application/json+fhir; charset=UTF-8",
-                        url: 'http://fhirtest.uhn.ca/baseDstu2/Patient',
-                        data: formdata,
-                        async:true,
-                        crossDomain:true,
-                        success: function(data){                         
-                         var subStr = data.text.div.match("Patient/(.*)/_history");
-                         patientId=subStr[1];
-                         alert("New Patient has been created in FHIR. Patient FHIR id - "+ patientId);
-                         
-                         /*
-                         formdata="{\"resourceType\":\"RelatedPerson\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"relationship\":{\"text\":\"Sig Other\"},\"name\":{\"use\":\"usual\",\"family\":[\"Ricardo\"],\"given\":[\"Ricky\"]},\"telecom\":[{\"system\":\"phone\",\"value\":\"0690383372\",\"use\":\"mobile\"},{\"system\":\"email\",\"value\":\"ricky@babaloo.com\",\"use\":\"home\"}]}";
-                         $.ajax({
-                             type: 'POST',
-                             contentType: "application/json+fhir; charset=UTF-8",
-                             url: 'http://fhirtest.uhn.ca/baseDstu2/RelatedPerson',
-                             data: formdata,
-                             async:true,
-                             crossDomain:true,
-                             success: function(data){
-                             	alert('emergency contact created');
-                             }
-                     	}); 
-                         */
-                         
-                         //angular.element($('#patientRegistrationCtrl')).scope().setPatientId(patientId);
-                         $('#fhirId').val(patientId);
-                         $('#signinForm').submit();
-                        }
-                });   
-                
-                
-                
-                
-            }
-            
+            	if(patientId!="9999999") {
+            		//alert("Patient already exists");
+            		
+	            	var formdata="{\"resourceType\":\"Patient\", \"name\":[{ \"family\":[\""+$('#last-name').val()+"\"],\"given\":[\""+$('#first-name').val()+"\"]}],\"gender\":\""+$('#gender').val()+"\",\"birthDate\":\""+$('#birthday').val()+"\",\"address\":[{\"use\":\"home\",\"line\":\""+$('#address1').val()+"\",\"city\":\""+$('#city').val()+"\",\"state\":\""+$('#state').val()+"\",\"postalCode\":\""+$('#zip').val()+"\"}],\"active\":true}";
+	            	console.log(formdata);
+	                $.ajax({
+	                        type: 'PUT',
+	                        contentType: "application/json+fhir; charset=UTF-8",
+	                        url: 'http://fhirtest.uhn.ca/baseDstu2/Patient/'+patientId,
+	                        data: formdata,
+	                        async:false,
+	                        crossDomain:true,
+	                        success: function(data){                         
+	                        	console.log("Patient has been updated in FHIR. Patient FHIR id - "+ patientId);
+		                         
+		                         var contactId=$('#fhirContact1Id').val();
+		                         var name1=$('#name1').val();
+		                         var phone1=$('#phone1').val();
+		                       	 var email1=$('#email1').val();
+		                         var relationship1=$('#relationship1').val();
+		                         
+		                         if(contactId!=null && contactId!="") {
+		                        	 if(name1 !="" && (phone1 !="" || email1 != "") && relationship1 != "") {
+			                        	 formdata="{\"resourceType\":\"RelatedPerson\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"relationship\":{\"text\":\""+relationship1+"\"},\"name\":{\"use\":\"usual\",\"family\":[\""+name1+"\"],\"given\":[\"Ricky\"]},\"telecom\":[{\"system\":\"phone\",\"value\":\""+phone1+"\",\"use\":\"mobile\"},{\"system\":\"email\",\"value\":\""+email1+"\",\"use\":\"home\"}]}";
+				                         $.ajax({
+				                             type: 'PUT',
+				                             contentType: "application/json+fhir; charset=UTF-8",
+				                             url: 'http://fhirtest.uhn.ca/baseDstu2/RelatedPerson/'+contactId,
+				                             data: formdata,
+				                             async:false,
+				                             crossDomain:true,
+				                             success: function(data){
+				                            	 console.log('emergency contact 1 updated');
+				                             }
+				                     	}); 
+			                         }
+		                         }
+		                         else {
+		                        	 if(name1 !="" && (phone1 !="" || email1 != "") && relationship1 != "") {
+			                        	 formdata="{\"resourceType\":\"RelatedPerson\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"relationship\":{\"text\":\""+relationship1+"\"},\"name\":{\"use\":\"usual\",\"family\":[\""+name1+"\"],\"given\":[\"Ricky\"]},\"telecom\":[{\"system\":\"phone\",\"value\":\""+phone1+"\",\"use\":\"mobile\"},{\"system\":\"email\",\"value\":\""+email1+"\",\"use\":\"home\"}]}";
+				                         $.ajax({
+				                             type: 'POST',
+				                             contentType: "application/json+fhir; charset=UTF-8",
+				                             url: 'http://fhirtest.uhn.ca/baseDstu2/RelatedPerson',
+				                             data: formdata,
+				                             async:false,
+				                             crossDomain:true,
+				                             success: function(data){
+				                            	 console.log('emergency contact 1 created');
+				                             }
+				                     	}); 
+			                         }
+	                        	}
+		                         
+		                         var contactId=$('#fhirContact2Id').val();	                        
+		                         var name1=$('#name2').val();
+		                         var phone1=$('#phone2').val();
+		                       	 var email1=$('#email2').val();
+		                         var relationship1=$('#relationship2').val();
+		                         
+		                         if(contactId!=null && contactId!="") {
+		                        	 if(name1 !="" && (phone1 !="" || email1 != "") && relationship1 != "") {
+			                        	 formdata="{\"resourceType\":\"RelatedPerson\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"relationship\":{\"text\":\""+relationship1+"\"},\"name\":{\"use\":\"usual\",\"family\":[\""+name1+"\"],\"given\":[\"Ricky\"]},\"telecom\":[{\"system\":\"phone\",\"value\":\""+phone1+"\",\"use\":\"mobile\"},{\"system\":\"email\",\"value\":\""+email1+"\",\"use\":\"home\"}]}";
+				                         $.ajax({
+				                             type: 'PUT',
+				                             contentType: "application/json+fhir; charset=UTF-8",
+				                             url: 'http://fhirtest.uhn.ca/baseDstu2/RelatedPerson/'+contactId,
+				                             data: formdata,
+				                             async:false,
+				                             crossDomain:true,
+				                             success: function(data){
+				                            	 console.log('emergency contact 2 updated');
+				                             }
+				                     	}); 
+			                         }
+		                         }
+		                         else {
+			                         if(name1 !="" && (phone1 !="" || email1 != "") && relationship1 != "") {
+			                        	 formdata="{\"resourceType\":\"RelatedPerson\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"relationship\":{\"text\":\""+relationship1+"\"},\"name\":{\"use\":\"usual\",\"family\":[\""+name1+"\"],\"given\":[\"Ricky\"]},\"telecom\":[{\"system\":\"phone\",\"value\":\""+phone1+"\",\"use\":\"mobile\"},{\"system\":\"email\",\"value\":\""+email1+"\",\"use\":\"home\"}]}";
+				                         $.ajax({
+				                             type: 'POST',
+				                             contentType: "application/json+fhir; charset=UTF-8",
+				                             url: 'http://fhirtest.uhn.ca/baseDstu2/RelatedPerson',
+				                             data: formdata,
+				                             async:false,
+				                             crossDomain:true,
+				                             success: function(data){
+				                            	 console.log('emergency contact 2 created');
+				                             }
+				                     	}); 
+			                         }
+	                        	}
+	
+		                         var fhId=$('#fhirFH1Id').val();
+		                         var date=$('#fhdate1').val();
+		                         var gender=$('#fhgender1').val();
+		                         var name=$('#fhname1').val();
+		                         var born=$('#fhborn1').val();
+		                         var relationship=$('#fhrelationship1').val();
+		                         var condition=$('#fhcondition1').val();
+		                         var age=$('#fhage1').val();
+		                         var note=$('#fhnote1').val();
+		                         var deceased=$('#fhdeceased1').val();	                         
+		                         
+		                         if(fhId!=null && fhId!="") {
+		                        	 if(date!="" && name!="" && born!="" && relationship!=v && age!="") {
+			                        	 formdata="{\"resourceType\":\"FamilyMemberHistory\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"date\":\""+date+"\",\"name\":\""+name+"\",\"relationship\":{\"coding\":[{\"display\":\""+relationship+"\"}]},\"gender\":\""+gender+"\",\"condition\":[{\"code\":{\"coding\":[{ \"display\":\""+condition+"\"}],\"text\":\""+note+"\"}}]}";
+				                         $.ajax({
+				                             type: 'PUT',
+				                             contentType: "application/json+fhir; charset=UTF-8",
+				                             url: 'http://fhirtest.uhn.ca/baseDstu2/FamilyMemberHistory/'+fhId,
+				                             data: formdata,
+				                             async:false,
+				                             crossDomain:true,
+				                             success: function(data){
+				                            	 console.log('family history 1 updated');
+				                             }
+				                     	});
+		                        	 }
+		                         }
+		                         else {
+		                        	 if(date!="" && name!="" && born!="" && relationship!=v && age!="") {
+				                         formdata="{\"resourceType\":\"FamilyMemberHistory\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"date\":\""+date+"\",\"name\":\""+name+"\",\"relationship\":{\"coding\":[{\"display\":\""+relationship+"\"}]},\"gender\":\""+gender+"\",\"condition\":[{\"code\":{\"coding\":[{ \"display\":\""+condition+"\"}],\"text\":\""+note+"\"}}]}";
+				                         $.ajax({
+				                             type: 'POST',
+				                             contentType: "application/json+fhir; charset=UTF-8",
+				                             url: 'http://fhirtest.uhn.ca/baseDstu2/FamilyMemberHistory',
+				                             data: formdata,
+				                             async:false,
+				                             crossDomain:true,
+				                             success: function(data){
+				                            	 console.log('family history 1 created');
+				                             }
+				                     	});
+		                        	 }
+		                         }
+		                         
+		                         var fhId=$('#fhirFH2Id').val();
+		                         var date=$('#fhdate2').val();
+		                         var gender=$('#fhgender2').val();
+		                         var name=$('#fhname2').val();
+		                         var born=$('#fhborn2').val();
+		                         var relationship=$('#fhrelationship2').val();
+		                         var condition=$('#fhcondition2').val();
+		                         var age=$('#fhage2').val();
+		                         var note=$('#fhnote2').val();
+		                         var deceased=$('#fhdeceased2').val();	                         
+		                         
+		                         if(fhId!=null && fhId!="") {
+		                        	 if(date!="" && name!="" && born!="" && relationship!="" && age!="") {
+			                        	 formdata="{\"resourceType\":\"FamilyMemberHistory\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"date\":\""+date+"\",\"name\":\""+name+"\",\"relationship\":{\"coding\":[{\"display\":\""+relationship+"\"}]},\"gender\":\""+gender+"\",\"condition\":[{\"code\":{\"coding\":[{ \"display\":\""+condition+"\"}],\"text\":\""+note+"\"}}]}";
+				                         $.ajax({
+				                             type: 'PUT',
+				                             contentType: "application/json+fhir; charset=UTF-8",
+				                             url: 'http://fhirtest.uhn.ca/baseDstu2/FamilyMemberHistory/'+fhId,
+				                             data: formdata,
+				                             async:false,
+				                             crossDomain:true,
+				                             success: function(data){
+				                            	 console.log('family history 2 updated');
+				                             }
+				                     	});
+		                        	 }
+		                         }
+		                         else {
+		                        	 if(date!="" && name!="" && born!="" && relationship!="" && age!="") {
+				                         formdata="{\"resourceType\":\"FamilyMemberHistory\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"date\":\""+date+"\",\"name\":\""+name+"\",\"relationship\":{\"coding\":[{\"display\":\""+relationship+"\"}]},\"gender\":\""+gender+"\",\"condition\":[{\"code\":{\"coding\":[{ \"display\":\""+condition+"\"}],\"text\":\""+note+"\"}}]}";
+				                         $.ajax({
+				                             type: 'POST',
+				                             contentType: "application/json+fhir; charset=UTF-8",
+				                             url: 'http://fhirtest.uhn.ca/baseDstu2/FamilyMemberHistory',
+				                             data: formdata,
+				                             async:false,
+				                             crossDomain:true,
+				                             success: function(data){
+				                            	 console.log('family history 2 created');
+				                             }
+				                     	});
+		                        	 }
+		                         }
+		                         
+		                         //angular.element($('#patientRegistrationCtrl')).scope().setPatientId(patientId).delay(5000);
+		                         //$('#fhirId').val(patientId);
+		                         //$('#signinForm').submit();
+	                    	}
+	                	});              		
+            		
+            		
+            	}
+            	else {
+	            	var formdata="{\"resourceType\":\"Patient\", \"name\":[{ \"family\":[\""+$('#last-name').val()+"\"],\"given\":[\""+$('#first-name').val()+"\"]}],\"gender\":\""+$('#gender').val()+"\",\"birthDate\":\""+$('#birthday').val()+"\",\"address\":[{\"use\":\"home\",\"line\":\""+$('#address1').val()+"\",\"city\":\""+$('#city').val()+"\",\"state\":\""+$('#state').val()+"\",\"postalCode\":\""+$('#zip').val()+"\"}],\"active\":true}";
+	            	console.log(formdata);
+	                $.ajax({
+	                        type: 'POST',
+	                        contentType: "application/json+fhir; charset=UTF-8",
+	                        url: 'http://fhirtest.uhn.ca/baseDstu2/Patient',
+	                        data: formdata,
+	                        async:false,
+	                        crossDomain:true,
+	                        success: function(data){                         
+		                         var subStr = data.text.div.match("Patient/(.*)/_history");
+		                         patientId=subStr[1];
+		                         console.log("New Patient has been created in FHIR. Patient FHIR id - "+ patientId);
+		                         
+		                         
+		                         var name1=$('#name1').val();
+		                         var phone1=$('#phone1').val();
+		                       	 var email1=$('#email1').val();
+		                         var relationship1=$('#relationship1').val();
+		                         
+		                         if(name1 !=null && (phone1 !=null || email1 != null) && relationship1 != null) {
+		                        	 formdata="{\"resourceType\":\"RelatedPerson\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"relationship\":{\"text\":\""+relationship1+"\"},\"name\":{\"use\":\"usual\",\"family\":[\""+name1+"\"],\"given\":[\"Ricky\"]},\"telecom\":[{\"system\":\"phone\",\"value\":\""+phone1+"\",\"use\":\"mobile\"},{\"system\":\"email\",\"value\":\""+email1+"\",\"use\":\"home\"}]}";
+			                         $.ajax({
+			                             type: 'POST',
+			                             contentType: "application/json+fhir; charset=UTF-8",
+			                             url: 'http://fhirtest.uhn.ca/baseDstu2/RelatedPerson',
+			                             data: formdata,
+			                             async:false,
+			                             crossDomain:true,
+			                             success: function(data){
+			                            	 console.log('emergency contact 1 created');
+			                             }
+			                     	}); 
+		                         }
+		                         
+		                         var name1=$('#name2').val();
+		                         var phone1=$('#phone2').val();
+		                       	 var email1=$('#email2').val();
+		                         var relationship1=$('#relationship2').val();
+		                         
+		                         if(name1 !=null && (phone1 !=null || email1 != null) && relationship1 != null) {
+		                        	 formdata="{\"resourceType\":\"RelatedPerson\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"relationship\":{\"text\":\""+relationship1+"\"},\"name\":{\"use\":\"usual\",\"family\":[\""+name1+"\"],\"given\":[\"Ricky\"]},\"telecom\":[{\"system\":\"phone\",\"value\":\""+phone1+"\",\"use\":\"mobile\"},{\"system\":\"email\",\"value\":\""+email1+"\",\"use\":\"home\"}]}";
+			                         $.ajax({
+			                             type: 'POST',
+			                             contentType: "application/json+fhir; charset=UTF-8",
+			                             url: 'http://fhirtest.uhn.ca/baseDstu2/RelatedPerson',
+			                             data: formdata,
+			                             async:false,
+			                             crossDomain:true,
+			                             success: function(data){
+			                            	 console.log('emergency contact 1 created');
+			                             }
+			                     	}); 
+		                         }
+	
+		                         var date=$('#fhdate1').val();
+		                         var gender=$('#fhgender1').val();
+		                         var name=$('#fhname1').val();
+		                         var born=$('#fhborn1').val();
+		                         var relationship=$('#fhrelationship1').val();
+		                         var condition=$('#fhcondition1').val();
+		                         var age=$('#fhage1').val();
+		                         var note=$('#fhnote1').val();
+		                         var deceased=$('#fhdeceased1').val();	                         
+		                         
+		                         if(date!=null && name!=null && born!=null && relationship!=null && age!=null) {
+		                         	formdata="{\"resourceType\":\"FamilyMemberHistory\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"date\":\""+date+"\",\"name\":\""+name+"\",\"relationship\":{\"coding\":[{\"display\":\""+relationship+"\"}]},\"gender\":\""+gender+"\",\"condition\":[{\"code\":{\"coding\":[{ \"display\":\""+condition+"\"}],\"text\":\""+note+"\"}}]}";
+			                         $.ajax({
+			                             type: 'POST',
+			                             contentType: "application/json+fhir; charset=UTF-8",
+			                             url: 'http://fhirtest.uhn.ca/baseDstu2/FamilyMemberHistory',
+			                             data: formdata,
+			                             async:false,
+			                             crossDomain:true,
+			                             success: function(data){
+			                            	 console.log('family history 1 created');
+			                             }
+			                     	});
+		                         }
+		                         
+		                         var date=$('#fhdate2').val();
+		                         var gender=$('#fhgender2').val();
+		                         var name=$('#fhname2').val();
+		                         var born=$('#fhborn2').val();
+		                         var relationship=$('#fhrelationship2').val();
+		                         var condition=$('#fhcondition2').val();
+		                         var age=$('#fhage2').val();
+		                         var note=$('#fhnote2').val();
+		                         var deceased=$('#fhdeceased2').val();	                         
+		                         
+		                         if(date!=null && name!=null && born!=null && relationship!=null && age!=null) {
+			                         formdata="{\"resourceType\":\"FamilyMemberHistory\",\"patient\":{\"reference\":\"Patient/"+patientId+"\"},\"date\":\""+date+"\",\"name\":\""+name+"\",\"relationship\":{\"coding\":[{\"display\":\""+relationship+"\"}]},\"gender\":\""+gender+"\",\"condition\":[{\"code\":{\"coding\":[{ \"display\":\""+condition+"\"}],\"text\":\""+note+"\"}}]}";
+			                         $.ajax({
+			                             type: 'POST',
+			                             contentType: "application/json+fhir; charset=UTF-8",
+			                             url: 'http://fhirtest.uhn.ca/baseDstu2/FamilyMemberHistory',
+			                             data: formdata,
+			                             async:false,
+			                             crossDomain:true,
+			                             success: function(data){
+			                             	console.log('family history 1 created');
+			                             }
+			                     	});
+		                         }
+		                         
+		                         //angular.element($('#patientRegistrationCtrl')).scope().setPatientId(patientId);
+		                         $('#fhirId').val(patientId);
+		                         $('#signinForm').submit().delay(5000);
+	                    	}
+	                	});   
+            		}
+            	}
         });
         
         $("#immunizationSubmit").click(function($http,$scope) {
