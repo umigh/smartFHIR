@@ -70,7 +70,8 @@
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2><%=guser.getNickname()%></h2>
+                            <h2><%=user!=null?user.firstName+" "+user.lastName:guser.getNickname()%></h2>
+                            <h2><%=user!=null?user.getFhirId():""%></h2>
                         </div>
                     </div>
                     <!-- /menu prile quick info -->
@@ -120,7 +121,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/img.jpg" alt=""><%=guser.getNickname() %>
+                                    <img src="images/img.jpg" alt=""><%=user!=null?user.firstName+" "+user.lastName:guser.getNickname()%>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
